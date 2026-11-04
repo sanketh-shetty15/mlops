@@ -1,0 +1,56 @@
+# Environment variables - NEVER commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Data files (large CSVs should not be committed)
+data/raw/**/*.csv
+data/raw/**/*.zip
+data/staging/**/*.csv
+data/cleaned/**/*.csv
+data/rejected/**/*.csv
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Airflow
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/logs/
+airflow/plugins/
+airflow/webserver_config.py
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/

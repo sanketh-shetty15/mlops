@@ -1,0 +1,17 @@
+{
+  "run_timestamp": "2026-10-13T10:52:38.331268",
+  "train_rows": 68640,
+  "recent_rows": 17447,
+  "lat_ks_statistic": 0.0165,
+  "lat_p_value": 0.001026,
+  "lat_drifted": true,
+  "lon_ks_statistic": 0.0071,
+  "lon_p_value": 0.487194,
+  "lon_drifted": false,
+  "train_grid_cells": 178,
+  "recent_grid_cells": 164,
+  "new_grid_cells": 6,
+  "coverage_pct": 96.34,
+  "location_drifted": true,
+  "retrain_required": true
+}

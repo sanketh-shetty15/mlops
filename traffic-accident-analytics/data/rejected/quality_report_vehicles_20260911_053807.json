@@ -1,0 +1,28 @@
+{
+  "dataset": "vehicles",
+  "run_timestamp": "2026-09-11T05:38:07.602991",
+  "total_records": 189815,
+  "checks_run": 2,
+  "checks_passed": 2,
+  "checks_failed": 0,
+  "total_rejected": 0,
+  "pipeline_halt": false,
+  "results": [
+    {
+      "rule": "vehicle_accident_index_not_null",
+      "passed": true,
+      "message": "All vehicle rows have accident_index",
+      "failed_count": 0,
+      "total_count": 189815,
+      "action": "REJECT"
+    },
+    {
+      "rule": "vehicle_no_duplicates",
+      "passed": true,
+      "message": "No duplicate vehicle records",
+      "failed_count": 0,
+      "total_count": 189815,
+      "action": "REJECT"
+    }
+  ]
+}

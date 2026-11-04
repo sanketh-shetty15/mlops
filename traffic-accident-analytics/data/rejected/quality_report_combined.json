@@ -1,0 +1,199 @@
+{
+  "run_timestamp": "2026-09-11T06:10:40.503575",
+  "datasets": {
+    "accidents": {
+      "dataset": "accidents",
+      "run_timestamp": "2026-09-11T06:10:40.637594",
+      "total_records": 104246,
+      "checks_run": 11,
+      "checks_passed": 11,
+      "checks_failed": 0,
+      "total_rejected": 0,
+      "pipeline_halt": false,
+      "results": [
+        {
+          "rule": "accident_row_count",
+          "passed": true,
+          "message": "Dataset contains 104,246 rows",
+          "failed_count": 0,
+          "total_count": 1,
+          "action": "FAIL_PIPELINE"
+        },
+        {
+          "rule": "accident_id_not_null",
+          "passed": true,
+          "message": "All accident_index values present",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "no_duplicate_accident_index",
+          "passed": true,
+          "message": "No duplicates found",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "latitude_range",
+          "passed": true,
+          "message": "All latitudes in [-90.0, 90.0]",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "longitude_range",
+          "passed": true,
+          "message": "All longitudes in [-180.0, 180.0]",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "accident_date_valid",
+          "passed": true,
+          "message": "All dates are valid",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "accident_time_format",
+          "passed": true,
+          "message": "All times in HH:MM format",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "LOG_WARN"
+        },
+        {
+          "rule": "severity_valid",
+          "passed": true,
+          "message": "All severity values in {1, 2, 3}",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "vehicle_count_positive",
+          "passed": true,
+          "message": "All vehicle counts >= 1",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "LOG_WARN"
+        },
+        {
+          "rule": "casualty_count_non_negative",
+          "passed": true,
+          "message": "All casualty counts >= 0",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "REJECT"
+        },
+        {
+          "rule": "uk_bounding_box",
+          "passed": true,
+          "message": "All accidents within UK bounding box",
+          "failed_count": 0,
+          "total_count": 104246,
+          "action": "LOG_WARN"
+        }
+      ]
+    },
+    "vehicles": {
+      "dataset": "vehicles",
+      "run_timestamp": "2026-09-11T06:10:43.700340",
+      "total_records": 189815,
+      "checks_run": 2,
+      "checks_passed": 2,
+      "checks_failed": 0,
+      "total_rejected": 0,
+      "pipeline_halt": false,
+      "results": [
+        {
+          "rule": "vehicle_accident_index_not_null",
+          "passed": true,
+          "message": "All vehicle rows have accident_index",
+          "failed_count": 0,
+          "total_count": 189815,
+          "action": "REJECT"
+        },
+        {
+          "rule": "vehicle_no_duplicates",
+          "passed": true,
+          "message": "No duplicate vehicle records",
+          "failed_count": 0,
+          "total_count": 189815,
+          "action": "REJECT"
+        }
+      ]
+    },
+    "casualties": {
+      "dataset": "casualties",
+      "run_timestamp": "2026-09-11T06:10:46.827027",
+      "total_records": 132977,
+      "checks_run": 2,
+      "checks_passed": 2,
+      "checks_failed": 0,
+      "total_rejected": 0,
+      "pipeline_halt": false,
+      "results": [
+        {
+          "rule": "casualty_accident_index_not_null",
+          "passed": true,
+          "message": "All casualty rows have accident_index",
+          "failed_count": 0,
+          "total_count": 132977,
+          "action": "REJECT"
+        },
+        {
+          "rule": "casualty_severity_valid",
+          "passed": true,
+          "message": "All casualty severities valid",
+          "failed_count": 0,
+          "total_count": 132977,
+          "action": "REJECT"
+        }
+      ]
+    },
+    "weather": {
+      "dataset": "weather",
+      "run_timestamp": "2026-09-11T06:10:49.596971",
+      "total_records": 1638120,
+      "checks_run": 3,
+      "checks_passed": 3,
+      "checks_failed": 0,
+      "total_rejected": 0,
+      "pipeline_halt": false,
+      "results": [
+        {
+          "rule": "weather_row_count",
+          "passed": true,
+          "message": "Weather dataset has 1,638,120 rows",
+          "failed_count": 0,
+          "total_count": 1,
+          "action": "LOG_WARN"
+        },
+        {
+          "rule": "weather_datetime_not_null",
+          "passed": true,
+          "message": "All weather rows have datetime",
+          "failed_count": 0,
+          "total_count": 1638120,
+          "action": "LOG_WARN"
+        },
+        {
+          "rule": "weather_temperature_plausible",
+          "passed": true,
+          "message": "All temperatures in plausible range",
+          "failed_count": 0,
+          "total_count": 1638120,
+          "action": "LOG_WARN"
+        }
+      ]
+    }
+  },
+  "overall_checks_failed": 0,
+  "overall_status": "PASS"
+}

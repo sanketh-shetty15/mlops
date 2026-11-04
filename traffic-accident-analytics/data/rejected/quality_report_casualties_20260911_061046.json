@@ -1,0 +1,28 @@
+{
+  "dataset": "casualties",
+  "run_timestamp": "2026-09-11T06:10:46.827027",
+  "total_records": 132977,
+  "checks_run": 2,
+  "checks_passed": 2,
+  "checks_failed": 0,
+  "total_rejected": 0,
+  "pipeline_halt": false,
+  "results": [
+    {
+      "rule": "casualty_accident_index_not_null",
+      "passed": true,
+      "message": "All casualty rows have accident_index",
+      "failed_count": 0,
+      "total_count": 132977,
+      "action": "REJECT"
+    },
+    {
+      "rule": "casualty_severity_valid",
+      "passed": true,
+      "message": "All casualty severities valid",
+      "failed_count": 0,
+      "total_count": 132977,
+      "action": "REJECT"
+    }
+  ]
+}

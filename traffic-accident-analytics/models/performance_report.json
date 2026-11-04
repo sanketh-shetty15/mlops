@@ -1,0 +1,30 @@
+{
+  "run_timestamp": "2026-10-13T10:52:34.524346",
+  "recent_months": [
+    11,
+    12
+  ],
+  "recent_rows": 17447,
+  "class_counts": {
+    "Slight": 13293,
+    "Serious": 3874,
+    "Fatal": 280
+  },
+  "macro_f1": 0.0695,
+  "recall_fatal": 0.525,
+  "recall_serious": 0.4158,
+  "recall_slight": 0.0,
+  "total_fatal": 0,
+  "fn_fatal": 0,
+  "fn_rate_fatal": 0.0,
+  "retrain_required": true,
+  "retrain_reasons": [
+    "macro_f1=0.0695 < threshold=0.3",
+    "feature_drift_detected",
+    "location_drift_detected"
+  ],
+  "thresholds": {
+    "min_macro_f1": 0.3,
+    "max_fn_rate": 0.5
+  }
+}

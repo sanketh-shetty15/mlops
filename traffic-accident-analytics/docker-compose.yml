@@ -1,0 +1,78 @@
+# ============================================================
+# docker-compose.yml
+# Runs the full Part 2 MLOps stack:
+#   - severity-api  : FastAPI prediction service (port 8000)
+#   - mlflow-server : MLflow tracking UI        (port 5000)
+#
+# Usage:
+#   docker-compose up          # start both services
+#   docker-compose up -d       # start in background
+#   docker-compose down        # stop and remove containers
+#   docker-compose logs -f     # tail logs
+#
+# Prerequisites:
+#   1. Run Part 1 pipeline first:   python scripts/run_pipeline.py
+#   2. Train models:                python ml/train.py
+#   3. Confirm models/best_model.pkl exists
+#   4. Copy .env.example → .env and fill in DATABASE_URL
+# ============================================================
+
+version: "3.9"
+
+services:
+
+  # ── FastAPI Severity Prediction API ──────────────────────────
+  severity-api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: traffic_severity_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount model artefacts so the container uses the trained model
+      - ./models:/app/models:ro
+      # Mount .env so DATABASE_URL and other secrets are available
+      - ./.env:/app/.env:ro
+      # Mount cleaned data if batch predictions need it
+      - ./data/cleaned:/app/data/cleaned:ro
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import httpx; httpx.get('http://localhost:8000/health').raise_for_status()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+  # ── MLflow Tracking Server ────────────────────────────────────
+  mlflow-server:
+    image: python:3.11-slim
+    container_name: traffic_mlflow
+    working_dir: /app
+    volumes:
+      # Mount the mlflow/ directory so the SQLite DB persists
+      - ./mlflow:/app/mlflow
+      # Mount models/ so MLflow can serve artefacts
+      - ./models:/app/models:ro
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: >
+      sh -c "pip install mlflow --quiet &&
+             mlflow server
+               --backend-store-uri sqlite:///mlflow/mlflow.db
+               --default-artifact-root /app/mlflow/artifacts
+               --host 0.0.0.0
+               --port 5000"
+    restart: unless-stopped
+
+# ── Shared network ────────────────────────────────────────────
+networks:
+  default:
+    name: traffic_analytics_network

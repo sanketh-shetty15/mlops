@@ -1,0 +1,152 @@
+{
+  "run_timestamp": "2026-10-13T10:52:38.341762",
+  "retrain_required": true,
+  "performance": {
+    "run_timestamp": "2026-10-13T10:52:34.524346",
+    "recent_months": [
+      11,
+      12
+    ],
+    "recent_rows": 17447,
+    "class_counts": {
+      "Slight": 13293,
+      "Serious": 3874,
+      "Fatal": 280
+    },
+    "macro_f1": 0.0695,
+    "recall_fatal": 0.525,
+    "recall_serious": 0.4158,
+    "recall_slight": 0.0,
+    "total_fatal": 0,
+    "fn_fatal": 0,
+    "fn_rate_fatal": 0.0,
+    "retrain_required": true,
+    "retrain_reasons": [
+      "macro_f1=0.0695 < threshold=0.3",
+      "feature_drift_detected",
+      "location_drift_detected"
+    ],
+    "thresholds": {
+      "min_macro_f1": 0.3,
+      "max_fn_rate": 0.5
+    }
+  },
+  "feature_drift": {
+    "run_timestamp": "2026-10-13T10:52:37.007139",
+    "train_rows": 68640,
+    "recent_rows": 17447,
+    "features_checked": 15,
+    "features_drifted": 12,
+    "drifted_features": [
+      "accident_hour",
+      "weekday_num",
+      "accident_month",
+      "road_type",
+      "light_conditions",
+      "road_surface_conditions",
+      "urban_or_rural_area",
+      "number_of_vehicles",
+      "temperature_2m",
+      "precipitation",
+      "wind_speed_10m",
+      "weather_code"
+    ],
+    "overall_drift": true,
+    "retrain_required": true,
+    "p_threshold": 0.05,
+    "feature_results": {
+      "accident_hour": {
+        "ks_statistic": 0.0178,
+        "p_value": 0.000293,
+        "drifted": true
+      },
+      "weekday_num": {
+        "ks_statistic": 0.0234,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "accident_month": {
+        "ks_statistic": 1.0,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "road_type": {
+        "ks_statistic": 0.0122,
+        "p_value": 0.03125,
+        "drifted": true
+      },
+      "speed_limit": {
+        "ks_statistic": 0.0099,
+        "p_value": 0.132027,
+        "drifted": false
+      },
+      "junction_detail": {
+        "ks_statistic": 0.0102,
+        "p_value": 0.119628,
+        "drifted": false
+      },
+      "light_conditions": {
+        "ks_statistic": 0.2782,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "road_surface_conditions": {
+        "ks_statistic": 0.3038,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "urban_or_rural_area": {
+        "ks_statistic": 0.0175,
+        "p_value": 0.000386,
+        "drifted": true
+      },
+      "number_of_vehicles": {
+        "ks_statistic": 0.0311,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "number_of_casualties": {
+        "ks_statistic": 0.0061,
+        "p_value": 0.667362,
+        "drifted": false
+      },
+      "temperature_2m": {
+        "ks_statistic": 0.46,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "precipitation": {
+        "ks_statistic": 0.041,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "wind_speed_10m": {
+        "ks_statistic": 0.1251,
+        "p_value": 0.0,
+        "drifted": true
+      },
+      "weather_code": {
+        "ks_statistic": 0.04,
+        "p_value": 0.0,
+        "drifted": true
+      }
+    }
+  },
+  "location_drift": {
+    "run_timestamp": "2026-10-13T10:52:38.331268",
+    "train_rows": 68640,
+    "recent_rows": 17447,
+    "lat_ks_statistic": 0.0165,
+    "lat_p_value": 0.001026,
+    "lat_drifted": true,
+    "lon_ks_statistic": 0.0071,
+    "lon_p_value": 0.487194,
+    "lon_drifted": false,
+    "train_grid_cells": 178,
+    "recent_grid_cells": 164,
+    "new_grid_cells": 6,
+    "coverage_pct": 96.34,
+    "location_drifted": true,
+    "retrain_required": true
+  }
+}

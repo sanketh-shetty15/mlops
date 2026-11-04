@@ -1,0 +1,17 @@
+[
+  "accident_hour",
+  "weekday_num",
+  "accident_month",
+  "road_type",
+  "speed_limit",
+  "junction_detail",
+  "light_conditions",
+  "road_surface_conditions",
+  "urban_or_rural_area",
+  "number_of_vehicles",
+  "number_of_casualties",
+  "temperature_2m",
+  "precipitation",
+  "wind_speed_10m",
+  "weather_code"
+]

@@ -1,0 +1,9 @@
+{
+  "source_name": "casualties_2023",
+  "source_type": "csv_download",
+  "extraction_timestamp": "2026-09-11T06:43:02.459074",
+  "status": "SUCCESS",
+  "row_count": 132977,
+  "error_message": "",
+  "destination_path": "data\\raw\\casualties\\dft-road-casualty-statistics-casualty-2023.csv"
+}

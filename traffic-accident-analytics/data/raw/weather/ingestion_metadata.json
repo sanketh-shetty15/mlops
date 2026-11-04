@@ -1,0 +1,22 @@
+{
+  "source_name": "weather_2023",
+  "source_type": "api_open_meteo",
+  "extraction_timestamp": "2026-09-11T06:43:03.721245",
+  "status": "SUCCESS",
+  "grid_cells_requested": 187,
+  "grid_cells_fetched": 187,
+  "start_date": "2023-01-01",
+  "end_date": "2023-12-31",
+  "hourly_variables": [
+    "temperature_2m",
+    "precipitation",
+    "rain",
+    "snowfall",
+    "weather_code",
+    "wind_speed_10m",
+    "wind_direction_10m",
+    "relative_humidity_2m",
+    "visibility",
+    "cloud_cover"
+  ]
+}

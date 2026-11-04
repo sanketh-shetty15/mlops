@@ -1,0 +1,25 @@
+artifact_path: file:C:/Users/Sanketh H R/Projects/MLops/traffic-accident-analytics/mlruns/1/models/m-e8e44656967344aba5f28491dc2fca7d/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.6
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types:
+    - numpy.dtype
+    - sklearn.tree._tree.Tree
+mlflow_version: 3.17.0
+model_id: m-e8e44656967344aba5f28491dc2fca7d
+model_size_bytes: 10352777
+model_uuid: m-e8e44656967344aba5f28491dc2fca7d
+prompts: null
+run_id: 89459bad5b834db083e7d50f8420c5a2
+utc_time_created: '2026-10-14 05:39:16.822880'

@@ -1,0 +1,9 @@
+{
+  "registered_model_name": "accident_severity_classifier",
+  "version": 1,
+  "run_id": "68c52fdd826d4f38bb4df8e7ab4ba6d3",
+  "model_type": "rf",
+  "macro_f1": 0.386,
+  "recall_fatal": 0.3258,
+  "stage": "Production"
+}

@@ -1,0 +1,36 @@
+{
+  "dataset": "weather",
+  "run_timestamp": "2026-09-11T05:38:12.623559",
+  "total_records": 1638120,
+  "checks_run": 3,
+  "checks_passed": 3,
+  "checks_failed": 0,
+  "total_rejected": 0,
+  "pipeline_halt": false,
+  "results": [
+    {
+      "rule": "weather_row_count",
+      "passed": true,
+      "message": "Weather dataset has 1,638,120 rows",
+      "failed_count": 0,
+      "total_count": 1,
+      "action": "LOG_WARN"
+    },
+    {
+      "rule": "weather_datetime_not_null",
+      "passed": true,
+      "message": "All weather rows have datetime",
+      "failed_count": 0,
+      "total_count": 1638120,
+      "action": "LOG_WARN"
+    },
+    {
+      "rule": "weather_temperature_plausible",
+      "passed": true,
+      "message": "All temperatures in plausible range",
+      "failed_count": 0,
+      "total_count": 1638120,
+      "action": "LOG_WARN"
+    }
+  ]
+}

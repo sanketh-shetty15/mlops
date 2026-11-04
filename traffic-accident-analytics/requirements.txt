@@ -1,0 +1,54 @@
+# ============================================================
+# Traffic Accident Analytics — Python Dependencies
+# Python 3.11 / 3.12 / 3.13 / 3.14 compatible
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# NOTE — Apache Airflow:
+#   Airflow ships pre-built wheels only up to Python 3.12 as of 2026.
+#   Install it separately in a Python 3.11 or 3.12 virtual environment,
+#   OR use Docker/WSL2.  See README §10 for full instructions.
+#   The rest of this project (pipeline scripts, dashboard, tests) runs
+#   fine on Python 3.14 without Airflow installed.
+# ============================================================
+
+# ── Core data processing ──────────────────────────────────────
+# Use the latest release that ships a Python 3.14 wheel.
+# As of mid-2026, pandas 2.2.x and numpy 2.x have 3.14 wheels.
+pandas>=2.2.0
+numpy>=2.0.0
+
+# ── HTTP requests (DfT CSV download + Open-Meteo API) ────────
+requests>=2.31.0
+urllib3>=2.1.0
+
+# ── PostgreSQL driver ─────────────────────────────────────────
+# psycopg2-binary ships pre-built wheels for most platforms.
+psycopg2-binary>=2.9.9
+
+# ── Environment variables ─────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── Streamlit dashboard ───────────────────────────────────────
+streamlit>=1.35.0
+
+# ── Plotly charts ─────────────────────────────────────────────
+plotly>=5.18.0
+
+# ── Parquet support (weather cache files) ────────────────────
+# pyarrow ships Python 3.14 wheels from version 17+
+pyarrow>=17.0.0
+
+# ── SQLAlchemy (used by pandas read_sql) ─────────────────────
+SQLAlchemy>=2.0.23
+
+# ── Testing ───────────────────────────────────────────────────
+pytest>=7.4.3
+pytest-cov>=4.1.0
+
+# ── Progress bars (optional, used in ingestion scripts) ──────
+tqdm>=4.66.1
+
+# ── Apache Airflow (install separately — see note above) ─────
+# apache-airflow==2.8.1   ← commented out; install in Python 3.12 env
